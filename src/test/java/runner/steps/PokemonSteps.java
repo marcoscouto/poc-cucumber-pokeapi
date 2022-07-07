@@ -19,13 +19,13 @@ public class PokemonSteps {
     }
 
     @Quando("faço a busca na api de pokemons")
-    public void fazerBuscarNaApi() {
+    public void buscarPokemons() {
         this.response = RestAssured
                 .get("https://pokeapi.co/api/v2/pokemon/" + pokemon);
     }
 
     @Então("verifico se seu id é o {int}")
-    public void receberInformacoes(int id) {
+    public void verificarPokemonId(int id) {
         this.response.then().body("id", equalTo(id));
     }
 
