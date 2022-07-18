@@ -1,5 +1,6 @@
 package runner.steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
@@ -7,6 +8,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
 
 public class PokemonSteps {
 
@@ -24,9 +26,14 @@ public class PokemonSteps {
                 .get("https://pokeapi.co/api/v2/pokemon/" + pokemon);
     }
 
-    @Então("verifico se seu id é o {int}")
+    @Então("verifico que seu id é {int}")
     public void verificarPokemonId(int id) {
         this.response.then().body("id", equalTo(id));
+    }
+
+    @Então("verifico que seu id não é")
+    public void verificarPokemonNaoId(DataTable dataTable) {
+        dataTable.asMap().values().forEach(value ->  this.response.then().body("id", not(value)));
     }
 
 }
