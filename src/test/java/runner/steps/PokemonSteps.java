@@ -7,6 +7,8 @@ import io.cucumber.java.pt.Quando;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.not;
 
@@ -34,6 +36,11 @@ public class PokemonSteps {
     @Então("verifico que seu id não é")
     public void verificarPokemonNaoId(DataTable dataTable) {
         dataTable.asMap().values().forEach(value ->  this.response.then().body("id", not(value)));
+    }
+
+    @Então("verifico que seu id não será")
+    public void verificarPokemonNaoId(List list) {
+        list.forEach(value ->  this.response.then().body("id", not(value)));
     }
 
 }

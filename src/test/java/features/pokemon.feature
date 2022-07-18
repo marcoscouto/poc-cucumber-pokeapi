@@ -39,3 +39,15 @@ Cenário: Busca um pokemon específico
     | 100    |
     | 999    |
 
+# Lista
+Cenário: Busca um pokemon específico
+  Dado que escolho o pokemon "pikachu"
+  Quando faço a busca na api de pokemons
+  Então verifico que seu id não será
+    | 0   |
+    | 9   |
+    | 24  |
+    | 26  |
+    | 100 |
+    | 999 |
+
