@@ -31,7 +31,7 @@ Cenário: Busca um pokemon específico
   Dado que escolho o pokemon "pikachu"
   Quando faço a busca na api de pokemons
   Então verifico que seu id não é
-    | ids |
+    | ids    |
     | 0      |
     | 9      |
     | 24     |
