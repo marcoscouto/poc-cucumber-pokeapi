@@ -1,5 +1,6 @@
 #language: pt
 
+@poketest
 # Descrição da funcionalidade
 Funcionalidade: Buscar por pokemons
 
