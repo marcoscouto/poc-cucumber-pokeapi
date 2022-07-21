@@ -3,6 +3,10 @@
 # Descrição da funcionalidade
 Funcionalidade: Buscar por pokemons
 
+# Define o contexto para todos os testes
+Contexto:
+  Dado que imprimo a mensagem "teste iniciado"
+
 # Cenário Simples
 Cenário: Busca um pokemon específico
   Dado que escolho o pokemon "ditto"

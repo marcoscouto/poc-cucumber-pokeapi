@@ -43,4 +43,8 @@ public class PokemonSteps {
         list.forEach(value ->  this.response.then().body("id", not(value)));
     }
 
+    @Dado("que imprimo a mensagem {string}")
+    public void queImprimoAMensagem(String mensagem) {
+        System.out.println(mensagem);
+    }
 }
